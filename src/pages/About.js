@@ -1,6 +1,6 @@
 import ExperienceHeroSection from '../components/ExperienceHeroSection';
 
-function About({ level }) {
+function About({ level, addExp, addExpNotif }) {
     return (
         <>
             <ExperienceHeroSection

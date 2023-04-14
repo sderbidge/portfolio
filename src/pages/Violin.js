@@ -2,7 +2,7 @@ import ReactPlayer from "react-player"
 import Hero from "./../components/Hero"
 import './Violin.css'
 
-function Violin({ addExp }) {
+function Violin({ addExp, addExpNotif }) {
 
     return (
         <>
@@ -15,7 +15,11 @@ function Violin({ addExp }) {
                         the money to pay for lessons at the time. Later after switching teachers to Mrs. Salisbury,
                         I got to see my first concert with the LA Symphony and Gil Shaham. He was what I aspired to be.
                         After moving to Utah in July, 2010 I joined an orchestra in Olympus, UT. That experience springboarded
-                        me into wanting to join the <span onClick={() => addExp(10)} style={{ fontWeight: "bold" }}>Lyceum Philharmonic</span>
+                        me into wanting to join the
+                        <span onClick={() => {
+                            addExpNotif(10)
+                            addExp(10)
+                        }} style={{ fontWeight: "bold" }}>Lyceum Philharmonic</span>
                     </p>
                 </div>
                 <div className="violin-youtube">

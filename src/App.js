@@ -58,40 +58,45 @@ function App() {
     return 5 * Math.pow(2, level - 1);
   }
 
-
   function addExp(amount) {
     setExp(prevExp => {
+      console.log("amount", amount)
       let totalExp = prevExp + amount;
       let newLevel = level;
       let newMaxExp = maxExp;
       let prevMaxExp = maxExp
-      console.log("newMaxexp", newMaxExp)
-      console.log("prevMaxExp", prevMaxExp)
-      console.log("newMaxExp", newMaxExp)
       if (totalExp >= maxExp) {
         newLevel += 1;
-        newMaxExp = calculateTotalExp(newLevel) - 1;
+        newMaxExp = calculateTotalExp(newLevel);
         totalExp -= prevMaxExp;
         if (totalExp >= newMaxExp) {
+          console.log("ADD EXP", totalExp - newMaxExp)
           addExp(totalExp - newMaxExp);
           newLevel += 1;
-          newMaxExp = calculateTotalExp(newLevel) - 1;
-          totalExp -= prevMaxExp;
+          newMaxExp = calculateTotalExp(newLevel);
+          totalExp -= newMaxExp;
+          totalExp = Math.abs(totalExp)
         }
       } else if (totalExp >= calculateTotalExp(newLevel)) {
         newLevel += 1;
-        newMaxExp = calculateTotalExp(newLevel) - 1;
-        totalExp -= prevMaxExp;
+        newMaxExp = calculateTotalExp(newLevel)
+        totalExp -= newMaxExp;
+        totalExp = Math.abs(totalExp)
       }
       setLevel(newLevel);
-      console.log(newMaxExp)
       setMaxExp(newMaxExp);
       return totalExp;
     });
   }
 
-
-
+  function addExpNotif(exp) {
+    console.log(exp)
+    setAddExpAmount((prev) => prev + exp)
+    setTimeout(() => {
+      setAddExpAmount(0)
+    }, 1500)
+    console.log("Setting to 0...")
+  }
 
   return (
     <Router>
@@ -100,9 +105,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/experience" exact element={<Experience level={level} />} />
-        <Route path="/about" exact element={<About level={level} />} />
-        <Route path="/violin" exact element={<Violin addExp={addExp} />} />
+        <Route path="/experience" exact element={<Experience level={level} addExpNotif={addExpNotif} />} />
+        <Route path="/about" exact element={<About level={level} addExpNotif={addExpNotif} />} />
+        <Route path="/violin" exact element={<Violin addExp={addExp} addExpNotif={addExpNotif} />} />
       </Routes>
       <div id="fireworks-container">
         <div id="level-up">LEVEL UP!</div>
