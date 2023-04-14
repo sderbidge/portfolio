@@ -4,3 +4,37 @@
     padding: 0;
     font-family: "PT Sans", sans-serif;
 }
+
+#fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+    color: transparent;
+    font-size: 100px;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+#fireworks-container.fireworks-started {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+#fireworks-container.fireworks-stopped {
+    background-color: transparent;
+    color: transparent;
+}
+
+#level-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

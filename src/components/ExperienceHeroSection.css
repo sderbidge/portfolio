@@ -1,0 +1,55 @@
+.experience-hero-container {
+  height: 45vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  top: 0;
+  left: 0;
+  position: relative;
+  /* added position: relative */
+}
+
+.experience-hero-container>a>h1 {
+  color: #fff;
+  font-size: 100px;
+  margin-top: -100px;
+}
+
+.experience-hero-container>a>p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 32px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.experience-hero-container:hover .overlay-container {
+  opacity: 1;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-content {
+  color: #fff;
+  font-weight: bold;
+  font-size: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+}

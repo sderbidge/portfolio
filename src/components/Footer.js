@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import { FaLinkedin, FaTwitter, FaFacebook, FaGithub } from "react-icons/fa";
 

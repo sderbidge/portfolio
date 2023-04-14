@@ -1,9 +1,8 @@
 import React from "react";
 import { Button } from "./Button";
-import "../App.css";
-import "./HeroSection.css";
+import "./HeroSectionWithButtons.css";
 
-function HeroSection() {
+function HeroSectionWithButtons() {
   return (
     <div className="hero-container">
       <h1>STEPHEN DERBIDGE</h1>
@@ -13,6 +12,7 @@ function HeroSection() {
           className="btns"
           buttonStyle="btn--outline"
           buttonSize="btn--large"
+          path="/experience"
         >
           SEE EXPERIENCE
         </Button>
@@ -21,4 +21,4 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default HeroSectionWithButtons;
