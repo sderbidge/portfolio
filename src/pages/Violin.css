@@ -5,6 +5,37 @@
     flex-direction: column;
 }
 
+.violin-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.header {
+    font-size: 48px;
+    margin-top: 30px;
+
+}
+
+.paragraph-section {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    width: 500px;
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.paragraph-section span {
+    cursor: pointer;
+}
+
 .violin-youtube,
 .violin-facebook-1 {
     display: flex;

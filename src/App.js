@@ -60,7 +60,6 @@ function App() {
 
   function addExp(amount) {
     setExp(prevExp => {
-      console.log("amount", amount)
       let totalExp = prevExp + amount;
       let newLevel = level;
       let newMaxExp = maxExp;
@@ -70,7 +69,6 @@ function App() {
         newMaxExp = calculateTotalExp(newLevel);
         totalExp -= prevMaxExp;
         if (totalExp >= newMaxExp) {
-          console.log("ADD EXP", totalExp - newMaxExp)
           addExp(totalExp - newMaxExp);
           newLevel += 1;
           newMaxExp = calculateTotalExp(newLevel);
@@ -112,7 +110,7 @@ function App() {
       <div id="fireworks-container">
         <div id="level-up">LEVEL UP!</div>
       </div>
-      <Footer />
+      <Footer addExp={addExp} addExpNotif={addExpNotif} />
     </Router>
   );
 }
