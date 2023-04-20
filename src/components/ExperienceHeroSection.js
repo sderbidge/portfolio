@@ -13,7 +13,8 @@ const ExperienceHeroSection = ({ title, subtitle, imageName, levelLock, userLeve
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         boxShadow: title ? "inset 0 0 0 1000px rgba(0, 0, 0, 0.2)" : null
-      }}>
+      }}
+    >
       {userLevel < levelLock && (
         <div className="overlay-container">
           <div className="overlay-content">
@@ -22,6 +23,14 @@ const ExperienceHeroSection = ({ title, subtitle, imageName, levelLock, userLeve
           </div>
         </div>
       )}
+      {userLevel >= levelLock && <Link to={path}>
+        <div className="overlay-container">
+          <div className="overlay-content">
+            <p>See More</p>
+          </div>
+        </div>
+      </Link>}
+
       <Link to={path}>
         <h1>{title}</h1>
         <p>{subtitle}</p>

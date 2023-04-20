@@ -64,7 +64,7 @@ function Navbar() {
 
             <li>
               <Link
-                to="/sign-up"
+                to="/experience"
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
@@ -72,7 +72,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">EXPLORE</Button>}
+          {button && <Button buttonStyle="btn--outline"><Link to="/experience" style={{ color: "#fff", textDecoration: "none" }}>EXPLORE</Link></Button>}
         </div>
       </nav>
     </>

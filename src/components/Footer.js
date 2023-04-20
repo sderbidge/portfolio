@@ -13,7 +13,7 @@ export default function Footer({ addExp, addExpNotif }) {
     <div className="footer-container">
       <div className="footer-right">
         <div className="buttons">
-          <a href="https://www.linkedin.com/in/stephen-derbidge/" target="_blank" onClick={() => {
+          <a href="https://www.linkedin.com/in/stephen-derbidge/" target="_blank" onMouseOver={() => {
             if (linkedinExp !== 0) {
               addExpNotif(linkedinExp)
               addExp(linkedinExp)
@@ -22,7 +22,7 @@ export default function Footer({ addExp, addExpNotif }) {
           }}>
             <button className="social-button"><FaLinkedin /><span>LinkedIn</span></button>
           </a>
-          <a href="https://twitter.com/DerbidgeStephen/" target="_blank" onClick={() => {
+          <a href="https://twitter.com/DerbidgeStephen/" target="_blank" onMouseOver={() => {
             if (twitterExp !== 0) {
               addExpNotif(twitterExp)
               addExp(twitterExp)
@@ -33,7 +33,7 @@ export default function Footer({ addExp, addExpNotif }) {
           </a>
         </div>
         <div className="buttons">
-          <a href="https://www.facebook.com/profile.php?id=100004955105212" target="_blank" onClick={() => {
+          <a href="https://www.facebook.com/profile.php?id=100004955105212" target="_blank" onMouseOver={() => {
             if (facebookExp !== 0) {
               addExpNotif(facebookExp)
               addExp(facebookExp)
@@ -42,7 +42,7 @@ export default function Footer({ addExp, addExpNotif }) {
           }}>
             <button className="social-button"><FaFacebook /><span>Facebook</span></button>
           </a>
-          <a href="https://www.github.com/sderbidge" target="_blank" onClick={() => {
+          <a href="https://www.github.com/sderbidge" target="_blank" onMouseOver={() => {
             if (githubExp !== 0) {
               addExpNotif(githubExp)
               addExp(githubExp)

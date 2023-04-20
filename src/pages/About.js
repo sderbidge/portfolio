@@ -30,6 +30,15 @@ function About({ level, addExp, addExpNotif }) {
                 backgroundPosition={"center 25%"}
                 path={"/violin"}
             />
+            <ExperienceHeroSection
+                title={"Roblox Game Development"}
+                subtitle={"2011 - Present"}
+                imageName={"robloxlogo.jpg"}
+                levelLock={7}
+                userLevel={level}
+                backgroundPosition={"center"}
+                path={"/"}
+            />
         </>
     );
 }
