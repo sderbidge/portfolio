@@ -9,6 +9,10 @@ import './Church.css'
 
 function Church({ addExp, addExpNotif }) {
     const [conferenceExp, setConferenceExp] = useState(8);
+    const [targetExp, setTargetExp] = useState(3);
+    const [reactExp, setReactExp] = useState(3);
+    const [javascriptExp, setJavascriptExp] = useState(3);
+
     return (
         <>
             <Hero title="Working for the Church" subtitle={"April 2022 - Present"} imageName={"romestainedglass.jpg"} height={"50vh"} />
@@ -29,8 +33,9 @@ function Church({ addExp, addExpNotif }) {
                     <div className="content-paragraph">"Working for the church has been exciting for me.
                         I've had an overwhelmingly positive experience with the culture at my workplace. One of the things that has made it great is the opportunity to connect with colleagues from different teams and portfolios. During breakfast on the first day of ICS Con, I joined a group of people who warmly welcomed me and started asking about my work. This inclusive and welcoming atmosphere was not a one-off occurrence; I noticed that people frequently initiated conversations with colleagues they hadn't met before during meal times.
                         <br /><br />
-                        What's also meaningful to me is the impact of the work I'm doing. Through the tests I've been involved in, we've been able to affect over 30 million monthly users who access                         <span style={{ fontWeight: "bold" }}
-                            onMouseDown={() => {
+                        What's also meaningful to me is the impact of the work I'm doing. Through the tests I've been involved in, we've been able to affect over 30 million monthly users who access
+                        <span style={{ fontWeight: "bold", cursor: "pointer" }}
+                            onMouseOver={() => {
                                 if (conferenceExp !== 0) {
                                     addExpNotif(conferenceExp)
                                     addExp(conferenceExp)
@@ -42,7 +47,7 @@ function Church({ addExp, addExpNotif }) {
                                     addExp(conferenceExp)
                                     setConferenceExp(0)
                                 }
-                                window.open("https://lyceumphilharmonic.com/", "_blank");
+                                window.open("https://churchofjesuschrist.org/", "_blank");
                             }}
                         > churchofjesuschrist.org</span>, extending beyond the Church's membership in Utah to reach people all over the world. It's been deeply satisfying to be part of something that contributes to a meaningful purpose and has such a wide-ranging impact."
                     </div>
@@ -54,9 +59,52 @@ function Church({ addExp, addExpNotif }) {
                     <h1>Skills</h1>
                 </div>
                 <div className="skills">
-                    <div className="skill" id="target" style={{ backgroundColor: '#e50606' }}></div>
-                    <div className="skill" id="react-logo" style={{ backgroundColor: '#5ED3F4' }}></div>
-                    <div className="skill" id="javascript-logo"></div>
+                    <div className="skill" id="target" style={{ backgroundColor: '#e50606' }}
+                        onMouseOver={() => {
+                            if (targetExp !== 0) {
+                                addExpNotif(targetExp)
+                                addExp(targetExp)
+                                setTargetExp(0)
+                            }
+                        }} onClick={() => {
+                            if (targetExp !== 0) {
+                                addExpNotif(targetExp)
+                                addExp(targetExp)
+                                setTargetExp(0)
+                            }
+                            window.open("https://business.adobe.com/products/target/adobe-target.html", "_blank");
+                        }}
+                    ></div>
+                    <div className="skill" id="react-logo" style={{ backgroundColor: '#5ED3F4' }}
+                        onMouseOver={() => {
+                            if (reactExp !== 0) {
+                                addExpNotif(reactExp)
+                                addExp(reactExp)
+                                setReactExp(0)
+                            }
+                        }} onClick={() => {
+                            if (reactExp !== 0) {
+                                addExpNotif(reactExp)
+                                addExp(reactExp)
+                                setReactExp(0)
+                            }
+                            window.open("https://react.dev/", "_blank");
+                        }}></div>
+                    <div className="skill" id="javascript-logo"
+                        onMouseOver={() => {
+                            if (javascriptExp !== 0) {
+                                addExpNotif(javascriptExp)
+                                addExp(javascriptExp)
+                                setJavascriptExp(0)
+                            }
+                        }} onClick={() => {
+                            if (javascriptExp !== 0) {
+                                addExpNotif(javascriptExp)
+                                addExp(javascriptExp)
+                                setJavascriptExp(0)
+                            }
+                            window.open("https://www.javascript.com/", "_blank");
+                        }}></div>
                 </div>
             </div>
 
