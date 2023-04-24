@@ -30,7 +30,8 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            Derbidge Portfolio
+            <div className="logo"><span>SD</span></div>
+            <div className="logo-desc">Derbidge Portfolio</div>
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <FaBars
@@ -68,11 +69,11 @@ function Navbar() {
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                EXPLORE
+                RESUME
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline"><Link to="/experience" style={{ color: "#fff", textDecoration: "none" }}>EXPLORE</Link></Button>}
+          {button && <Button buttonStyle="btn--outline"><Link to="/experience" style={{ color: "#fff", textDecoration: "none" }}>RESUME</Link></Button>}
         </div>
       </nav>
     </>

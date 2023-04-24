@@ -1,12 +1,11 @@
 import React from "react";
 import "./Hero.css";
 
-function Hero({ title, subtitle, imageName, height, backgroundPosition }) {
+function Hero({ title, subtitle, imageName, backgroundPosition }) {
     return (
         <div
-            className="hero-container"
+            className="hero-component-container"
             style={{
-                height: height,
                 backgroundImage: `url('/assets/${imageName}')`,
                 backgroundPosition: backgroundPosition,
                 backgroundSize: "cover",

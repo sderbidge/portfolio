@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import { Fireworks } from 'fireworks-js'
 import About from "./pages/About";
+import Church from "./pages/Church";
 import Violin from "./pages/Violin";
 
 
@@ -105,6 +106,7 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/experience" exact element={<Experience level={level} addExpNotif={addExpNotif} />} />
         <Route path="/about" exact element={<About level={level} addExpNotif={addExpNotif} />} />
+        <Route path="/church" exact element={<Church addExp={addExp} addExpNotif={addExpNotif} />} />
         <Route path="/violin" exact element={<Violin addExp={addExp} addExpNotif={addExpNotif} />} />
       </Routes>
       <div id="fireworks-container">

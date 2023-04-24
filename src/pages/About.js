@@ -9,7 +9,7 @@ function About({ level, addExp, addExpNotif }) {
                 imageName={"temple-splash.jpg"}
                 levelLock={2}
                 userLevel={level}
-                backgroundPosition={"center"}
+                backgroundPosition={"center top 27%"}
                 path={"/"}
             />
             <ExperienceHeroSection

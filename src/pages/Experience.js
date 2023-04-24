@@ -4,7 +4,7 @@ import "./Experience.css"
 function Experience({ level }) {
     return (
         <>
-            <Hero title="Professional Experience" subtitle={"April 2020 - Present"} imageName={"byu.jpg"} height={"50vh"} />
+            <Hero title="Professional Experience" subtitle={"April 2020 - Present"} imageName={"byu.jpg"} />
             <h1 className="resume-header">Current Resume</h1>
             <object data="/assets/STEPHEN_DERBIDGE_RESUME.pdf" type="application/pdf" width="100%" height="1200px">
             </object>
@@ -15,7 +15,7 @@ function Experience({ level }) {
                 levelLock={1}
                 userLevel={level}
                 backgroundPosition={"center 25%"}
-                path={"/"}
+                path={"/church"}
             />
             <ExperienceHeroSection
                 title={"Velaflame for Evermore"}
@@ -23,7 +23,7 @@ function Experience({ level }) {
                 imageName={"evermore.jpg"}
                 levelLock={2}
                 userLevel={level}
-                backgroundPosition={""}
+                backgroundPosition={"center"}
                 path={"/"}
             />
             <ExperienceHeroSection

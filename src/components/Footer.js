@@ -9,46 +9,59 @@ export default function Footer({ addExp, addExpNotif }) {
   const [twitterExp, setTwitterExp] = useState(1)
   const [facebookExp, setFacebookExp] = useState(1)
   const [githubExp, setGithubExp] = useState(3)
+
+  function handleLinkedinExp() {
+    if (linkedinExp !== 0) {
+      addExpNotif(linkedinExp)
+      addExp(linkedinExp)
+      setLinkedInExp(0)
+    }
+  }
+
+  function handleTwitterExp() {
+    if (twitterExp !== 0) {
+      addExpNotif(twitterExp)
+      addExp(twitterExp)
+      setTwitterExp(0)
+    }
+  }
+
+  function handleFacebookExp() {
+    if (facebookExp !== 0) {
+      addExpNotif(facebookExp)
+      addExp(facebookExp)
+      setFacebookExp(0)
+    }
+  }
+
+  function handleGithubExp() {
+    if (githubExp !== 0) {
+      addExpNotif(githubExp)
+      addExp(githubExp)
+      setGithubExp(0)
+    }
+  }
+
   return (
     <div className="footer-container">
       <div className="footer-right">
         <div className="buttons">
-          <a href="https://www.linkedin.com/in/stephen-derbidge/" target="_blank" onMouseOver={() => {
-            if (linkedinExp !== 0) {
-              addExpNotif(linkedinExp)
-              addExp(linkedinExp)
-              setLinkedInExp(0)
-            }
-          }}>
+          <a href="https://www.linkedin.com/in/stephen-derbidge/" target="_blank" onMouseOver={() => handleLinkedinExp()}
+            onClick={() => handleLinkedinExp()}>
             <button className="social-button"><FaLinkedin /><span>LinkedIn</span></button>
           </a>
-          <a href="https://twitter.com/DerbidgeStephen/" target="_blank" onMouseOver={() => {
-            if (twitterExp !== 0) {
-              addExpNotif(twitterExp)
-              addExp(twitterExp)
-              setTwitterExp(0)
-            }
-          }}>
+          <a href="https://twitter.com/DerbidgeStephen/" target="_blank" onMouseOver={() => handleTwitterExp()}
+            onClick={() => handleTwitterExp()}>
             <button className="social-button"><FaTwitter /><span>Twitter</span></button>
           </a>
         </div>
         <div className="buttons">
-          <a href="https://www.facebook.com/profile.php?id=100004955105212" target="_blank" onMouseOver={() => {
-            if (facebookExp !== 0) {
-              addExpNotif(facebookExp)
-              addExp(facebookExp)
-              setFacebookExp(0)
-            }
-          }}>
+          <a href="https://www.facebook.com/profile.php?id=100004955105212" target="_blank" onMouseOver={() => handleFacebookExp()}
+            onClick={() => handleFacebookExp()}>
             <button className="social-button"><FaFacebook /><span>Facebook</span></button>
           </a>
-          <a href="https://www.github.com/sderbidge" target="_blank" onMouseOver={() => {
-            if (githubExp !== 0) {
-              addExpNotif(githubExp)
-              addExp(githubExp)
-              setGithubExp(0)
-            }
-          }}>
+          <a href="https://www.github.com/sderbidge" target="_blank" onMouseOver={() => handleGithubExp()}
+            onClick={() => handleGithubExp()}>
             <button className="social-button"><FaGithub /><span>Github</span></button>
           </a>
         </div>

@@ -16,11 +16,7 @@
   color: #fff;
   font-size: 92px;
   margin-top: -100px;
-}
-
-.smaller-header-text {
-  font-size: 45px;
-  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .experience-hero-container>a>p {
@@ -29,6 +25,7 @@
   font-size: 32px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .experience-hero-container:hover .overlay-container {
@@ -57,4 +54,26 @@
   justify-content: space-between;
   align-items: center;
   width: 250px;
+}
+
+@media screen and (max-width: 1030px) {
+  .experience-hero-container>a>h1 {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .experience-hero-container>a>h1 {
+    font-size: 60px;
+  }
+
+  .experience-hero-container {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .experience-hero-container>a>h1 {
+    font-size: 40px;
+  }
 }

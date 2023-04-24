@@ -2,6 +2,7 @@
     padding: 15px;
     text-align: center;
     font-size: 42px;
-    background: linear-gradient(to bottom right, #142003, black);
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
     color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
