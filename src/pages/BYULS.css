@@ -1,0 +1,121 @@
+.each-slide-effect>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 350px;
+}
+
+.each-slide-effect span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+}
+
+.swiper {
+    width: 100%;
+    height: 500px;
+}
+
+#byuls-swiper {
+    text-align: center;
+    font-size: 18px;
+    background-color: #A79278;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-picture {
+    display: block;
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.markdown-section {
+    padding: 45px;
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.header {
+    font-size: 64px;
+    color: #000 !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.markdown-section p {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+#byuls-skills-header {
+    width: 100%;
+    text-align: center;
+    background-color: #261B16 !important;
+    color: white;
+    font-size: 38px;
+    padding: 15px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap onto multiple lines */
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background-color: black;
+}
+
+.skill {
+    width: 33.33%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+#vuejs {
+    background: url("../../public/assets/vuejs.png") center center/cover no-repeat;
+    object-fit: cover;
+}
+
+#node {
+    background: url("../../public/assets/nodejs.png") center center/cover no-repeat;
+    object-fit: cover;
+}
+
+#docker {
+    background: url("../../public/assets/docker.png") center center/cover no-repeat;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        /* Allow items to wrap onto multiple lines */
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 1000px;
+        background-color: black;
+    }
+
+    .skill {
+        width: 100%;
+        height: 33%;
+    }
+}

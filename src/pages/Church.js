@@ -1,4 +1,3 @@
-import ReactPlayer from "react-player"
 import Hero from "./../components/Hero"
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";

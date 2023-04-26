@@ -1,0 +1,112 @@
+.each-slide-effect>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 350px;
+}
+
+.each-slide-effect span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+}
+
+.swiper {
+    width: 100%;
+    height: 500px;
+}
+
+#velaflameSwiper {
+    text-align: center;
+    font-size: 18px;
+    background-color: #000;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-picture {
+    display: block;
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    background-position: top;
+}
+
+@media screen and (max-width: 1000px) {
+    .swiper-picture {
+        display: block;
+        width: 70%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+#velaflame-skills-header {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(14, 14, 14);
+    color: white;
+    font-size: 38px;
+    padding: 15px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap onto multiple lines */
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background-color: black !important;
+}
+
+.skill {
+    width: 33.33%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+#rainmaker {
+    background: url("../../public/assets/rainmaker.png") center center/cover no-repeat;
+    object-fit: cover;
+}
+
+#flutter {
+    background: url("../../public/assets/flutter.png") center center/cover no-repeat;
+    object-fit: cover;
+}
+
+#dart {
+    background: url("../../public/assets/dart.png") center center/cover no-repeat;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        /* Allow items to wrap onto multiple lines */
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        background-color: black;
+    }
+
+    .skill {
+        width: 100%;
+        height: 33%;
+    }
+}

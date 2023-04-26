@@ -13,6 +13,10 @@ import { Fireworks } from 'fireworks-js'
 import About from "./pages/About";
 import Church from "./pages/Church";
 import Violin from "./pages/Violin";
+import Velaflame from "./pages/Velaflame";
+import BYUBroadcasting from './pages/BYUBroadcasting';
+import BYULS from './pages/BYULS'
+import Zappala from "./pages/Zappala";
 
 
 function App() {
@@ -34,7 +38,55 @@ function App() {
 
   function useFireworks() {
     const container = document.querySelector('#fireworks-container')
-    const fireworks = new Fireworks(container, { /* options */ })
+    const fireworks = new Fireworks(container, {
+      autoresize: true,
+      opacity: 0.5,
+      acceleration: 1.10,
+      friction: 0.92,
+      gravity: 1.8,
+      particles: 80,
+      traceLength: 3,
+      traceSpeed: 14,
+      explosion: 10,
+      intensity: 30,
+      flickering: 50,
+      lineStyle: 'round',
+      hue: {
+        min: 0,
+        max: 360
+      },
+      delay: {
+        min: 30,
+        max: 60
+      },
+      rocketsPoint: {
+        min: 50,
+        max: 50
+      },
+      lineWidth: {
+        explosion: {
+          min: 2,
+          max: 4
+        },
+        trace: {
+          min: 1,
+          max: 2
+        }
+      },
+      brightness: {
+        min: 50,
+        max: 80
+      },
+      decay: {
+        min: 0.015,
+        max: 0.03
+      },
+      mouse: {
+        click: false,
+        move: false,
+        max: 1
+      }
+    })
     fireworks.start()
     container.classList.add('fireworks-started');
 
@@ -42,16 +94,17 @@ function App() {
       container.classList.add('fireworks-stopped');
       container.classList.remove('fireworks-started');
       fireworks.stop();
-    }, 3000)
-
-    setTimeout(() => {
-      container.classList.remove('fireworks-stopped');
-    }, 500);
+      setTimeout(() => {
+        container.classList.remove('fireworks-stopped');
+        container.removeChild(document.querySelector("canvas"))
+      }, 500);
+    }, 4000)
   }
 
   useEffect(() => {
     if (level !== 1) {
       useFireworks();
+      console.log("Fireworks")
     }
   }, [level])
 
@@ -104,9 +157,13 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/experience" exact element={<Experience level={level} addExpNotif={addExpNotif} />} />
+        <Route path="/experience" exact element={<Experience level={level} addExp={addExp} addExpNotif={addExpNotif} />} />
         <Route path="/about" exact element={<About level={level} addExpNotif={addExpNotif} />} />
         <Route path="/church" exact element={<Church addExp={addExp} addExpNotif={addExpNotif} />} />
+        <Route path="/velaflame" exact element={<Velaflame addExp={addExp} addExpNotif={addExpNotif} />} />
+        <Route path="/broadcasting" exact element={<BYUBroadcasting addExp={addExp} addExpNotif={addExpNotif} />} />
+        <Route path="/byuls" exact element={<BYULS addExp={addExp} addExpNotif={addExpNotif} />} />
+        <Route path="/zappala" exact element={<Zappala addExp={addExp} addExpNotif={addExpNotif} />} />
         <Route path="/violin" exact element={<Violin addExp={addExp} addExpNotif={addExpNotif} />} />
       </Routes>
       <div id="fireworks-container">

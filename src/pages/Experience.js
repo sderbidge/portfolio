@@ -1,13 +1,24 @@
 import Hero from "./../components/Hero"
 import ExperienceHeroSection from '../components/ExperienceHeroSection';
 import "./Experience.css"
-function Experience({ level }) {
+import { useState } from "react";
+function Experience({ level, addExp, addExpNotif }) {
+    const [showResume, setShowResume] = useState(false)
+    const [resumeExp, setResumeExp] = useState(10)
+
     return (
         <>
             <Hero title="Professional Experience" subtitle={"April 2020 - Present"} imageName={"byu.jpg"} />
-            <h1 className="resume-header">Current Resume</h1>
-            <object data="/assets/STEPHEN_DERBIDGE_RESUME.pdf" type="application/pdf" width="100%" height="1200px">
-            </object>
+            <h1 className="resume-header" onClick={() => {
+                setShowResume((prev) => !prev)
+                if (resumeExp !== 0) {
+                    addExpNotif(resumeExp)
+                    addExp(resumeExp)
+                    setResumeExp(0)
+                }
+            }}>Current Resume - {showResume ? "Press to Close" : "Press to Open"}</h1>
+            {showResume && <object data="/assets/STEPHEN_DERBIDGE_RESUME.pdf" type="application/pdf" width="100%" height="1200px">
+            </object>}
             <ExperienceHeroSection
                 title={"Church of Jesus Christ"}
                 subtitle={"April 2022 - Present"}
@@ -24,7 +35,7 @@ function Experience({ level }) {
                 levelLock={2}
                 userLevel={level}
                 backgroundPosition={"center"}
-                path={"/"}
+                path={"/velaflame"}
             />
             <ExperienceHeroSection
                 title={"BYU Broadcasting"}
@@ -33,7 +44,7 @@ function Experience({ level }) {
                 levelLock={3}
                 userLevel={level}
                 backgroundPosition={"center"}
-                path={"/"}
+                path={"/broadcasting"}
             />
             <ExperienceHeroSection
                 title={"College of Life Sciences"}
@@ -42,7 +53,7 @@ function Experience({ level }) {
                 levelLock={4}
                 userLevel={level}
                 backgroundPosition={"center"}
-                path={"/"}
+                path={"/byuls"}
             />
             <ExperienceHeroSection
                 title={"Dr. Zappalas Research Lab"}
@@ -51,7 +62,7 @@ function Experience({ level }) {
                 levelLock={5}
                 userLevel={level}
                 backgroundPosition={"center top 35%"}
-                path={"/"}
+                path={"/zappala"}
             />
         </>
     );

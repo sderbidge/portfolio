@@ -9,7 +9,7 @@
 .conference-header {
     background: linear-gradient(to right, #97C6D0, #76D2A9, #FFCC35);
     width: 100%;
-    height: 10vh;
+    height: 125px;
     display: flex;
     justify-content: center;
     align-items: center;
