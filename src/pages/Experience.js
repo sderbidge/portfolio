@@ -4,7 +4,7 @@ import "./Experience.css"
 import { useState } from "react";
 function Experience({ level, addExp, addExpNotif }) {
     const [showResume, setShowResume] = useState(false)
-    const [resumeExp, setResumeExp] = useState(10)
+    const [resumeExp, setResumeExp] = useState(parseInt(localStorage.getItem("resume-exp")))
 
     return (
         <>
@@ -15,6 +15,7 @@ function Experience({ level, addExp, addExpNotif }) {
                     addExpNotif(resumeExp)
                     addExp(resumeExp)
                     setResumeExp(0)
+                    localStorage.setItem("resume-exp", 0)
                 }
             }}>Current Resume - {showResume ? "Press to Close" : "Press to Open"}</h1>
             {showResume && <object data="/assets/STEPHEN_DERBIDGE_RESUME.pdf" type="application/pdf" width="100%" height="1200px">

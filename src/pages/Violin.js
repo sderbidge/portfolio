@@ -2,14 +2,44 @@ import ReactPlayer from "react-player"
 import Hero from "./../components/Hero"
 import './Violin.css'
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
 
 function Violin({ addExp, addExpNotif }) {
-    const [lyceumExp, setLyceumExp] = useState(11);
-    const [lyceumFacebookExp, setLyceumFacebookExp] = useState(12)
+    const [lyceumExp, setLyceumExp] = useState(parseInt(localStorage.getItem("lyceum-exp")));
+    const [lyceumFacebookExp, setLyceumFacebookExp] = useState(parseInt(localStorage.getItem("lyceum-facebook-exp")))
 
     return (
         <>
             <Hero title="Violin Experience" subtitle={"June, 2007 - Present"} imageName={"lyceum-night.jpg"} />
+            <Swiper navigation={true} modules={[Navigation]}>
+                <SwiperSlide className="violin-swiper">
+                    <img className="swiper-picture" src={`/assets/gentri1.jpg`} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="violin-swiper">
+                    <img className="swiper-picture" src={`/assets/gentri2.jpg`} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="violin-swiper">
+                    <img className="swiper-picture" src={`/assets/gentri3.jpg`} alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="violin-swiper">
+                    <iframe width="30%" height="80%" src="https://www.youtube.com/embed/Jtdz0Jb2HPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </SwiperSlide>
+                <SwiperSlide className="violin-swiper">
+                    <iframe width="30%" height="80%" src="https://www.youtube.com/embed/8xedWTzNjVc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </SwiperSlide>
+                <SwiperSlide className="violin-swiper">
+                    <iframe width="30%" height="80%" src="https://www.youtube.com/embed/sjHolORGoXg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </SwiperSlide>
+                <SwiperSlide className="violin-swiper">
+                    <iframe width="30%" height="80%" src="https://www.youtube.com/embed/XJjaZhNUg6Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </SwiperSlide>
+                <SwiperSlide className="violin-swiper">
+                    <iframe width="30%" height="80%" src="https://www.youtube.com/embed/t36gM2kv9bE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </SwiperSlide>
+            </Swiper>
             <div className="violin-content">
                 <h1 className="header">My Violin Journey</h1>
                 <div className="violin-card">
@@ -24,12 +54,14 @@ function Violin({ addExp, addExpNotif }) {
                                 addExpNotif(lyceumExp)
                                 addExp(lyceumExp)
                                 setLyceumExp(0)
+                                localStorage.setItem("lyceum-exp", 0)
                             }
                         }} onClick={() => {
                             if (lyceumExp !== 0) {
                                 addExpNotif(lyceumExp)
                                 addExp(lyceumExp)
                                 setLyceumExp(0)
+                                localStorage.setItem("lyceum-exp", 0)
                             }
                             window.open("https://lyceumphilharmonic.com/", "_blank");
                         }} style={{ fontWeight: "bold" }}>Lyceum Philharmonic. </span>
@@ -56,12 +88,14 @@ function Violin({ addExp, addExpNotif }) {
                                 addExpNotif(lyceumFacebookExp)
                                 addExp(lyceumFacebookExp)
                                 setLyceumFacebookExp(0)
+                                localStorage.setItem("lyceum-facebook-exp", 0)
                             }
                         }} onClick={() => {
                             if (lyceumFacebookExp !== 0) {
                                 addExpNotif(lyceumFacebookExp)
                                 addExp(lyceumFacebookExp)
                                 setLyceumFacebookExp(0)
+                                localStorage.setItem("lyceum-facebook-exp", 0)
                             }
                         }} style={{ fontWeight: "bold" }}>Gentri at Abravenel hall.</span>
                     </p>

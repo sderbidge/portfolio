@@ -7,10 +7,10 @@ function About({ level, addExp, addExpNotif }) {
                 title={"Sealed Forever"}
                 subtitle={"May 7th, 2021"}
                 imageName={"temple-splash.jpg"}
-                levelLock={2}
+                levelLock={3}
                 userLevel={level}
                 backgroundPosition={"center top 27%"}
-                path={"/"}
+                path={"/sealed"}
             />
             <ExperienceHeroSection
                 title={"Missionary Service"}
@@ -19,26 +19,26 @@ function About({ level, addExp, addExpNotif }) {
                 levelLock={4}
                 userLevel={level}
                 backgroundPosition={"center"}
-                path={"/"}
+                path={"/missionary"}
             />
             <ExperienceHeroSection
                 title={"Violin Experience"}
                 subtitle={"Lyceum Philharmonic"}
                 imageName={"lyceum.jpg"}
-                levelLock={6}
+                levelLock={5}
                 userLevel={level}
                 backgroundPosition={"center 25%"}
                 path={"/violin"}
             />
-            <ExperienceHeroSection
+            {/* <ExperienceHeroSection
                 title={"Roblox Game Development"}
                 subtitle={"2011 - Present"}
                 imageName={"robloxlogo.jpg"}
-                levelLock={7}
+                levelLock={1}
                 userLevel={level}
                 backgroundPosition={"center"}
-                path={"/"}
-            />
+                path={"/roblox"}
+            /> */}
         </>
     );
 }

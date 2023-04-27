@@ -17,6 +17,9 @@ import Velaflame from "./pages/Velaflame";
 import BYUBroadcasting from './pages/BYUBroadcasting';
 import BYULS from './pages/BYULS'
 import Zappala from "./pages/Zappala";
+import Sealed from "./pages/Sealed";
+import Missionary from "./pages/Missionary";
+import setupLocalStorage from "./data/LocalStorageSetup";
 
 
 function App() {
@@ -26,8 +29,12 @@ function App() {
   const [addExpAmount, setAddExpAmount] = useState(0);
 
   useEffect(() => {
+    const level = parseInt(localStorage.getItem("level"))
+    setLevel(level);
     const initialMaxExp = calculateTotalExp(level);
     setMaxExp(initialMaxExp);
+    const exp = parseInt(localStorage.getItem("exp"))
+    setExp(exp);
   }, []);
 
   useEffect(() => {
@@ -102,7 +109,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (level !== 1) {
+    if (level !== 1 && level !== parseInt(localStorage.getItem("level"))) {
       useFireworks();
       console.log("Fireworks")
     }
@@ -150,6 +157,16 @@ function App() {
     console.log("Setting to 0...")
   }
 
+  function saveStats() {
+    localStorage.setItem("level", level)
+    localStorage.setItem("maxExp", maxExp)
+    localStorage.setItem("exp", exp)
+  }
+
+  window.addEventListener("beforeunload", function () {
+    saveStats();
+  });
+
   return (
     <Router>
       <Character level={level} setLevel={setLevel} exp={exp} setExp={setExp} maxExp={maxExp} setMaxExp={setMaxExp} addExpAmount={addExpAmount} addExp={addExp} />
@@ -164,6 +181,8 @@ function App() {
         <Route path="/broadcasting" exact element={<BYUBroadcasting addExp={addExp} addExpNotif={addExpNotif} />} />
         <Route path="/byuls" exact element={<BYULS addExp={addExp} addExpNotif={addExpNotif} />} />
         <Route path="/zappala" exact element={<Zappala addExp={addExp} addExpNotif={addExpNotif} />} />
+        <Route path="/sealed" exact element={<Sealed addExp={addExp} addExpNotif={addExpNotif} />} />
+        <Route path="/missionary" exact element={<Missionary addExp={addExp} addExpNotif={addExpNotif} />} />
         <Route path="/violin" exact element={<Violin addExp={addExp} addExpNotif={addExpNotif} />} />
       </Routes>
       <div id="fireworks-container">

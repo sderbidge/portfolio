@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLock } from 'react-icons/fa';
+import { FaLock, FaUnlock } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import './ExperienceHeroSection.css'
 
@@ -18,15 +18,14 @@ const ExperienceHeroSection = ({ title, subtitle, imageName, levelLock, userLeve
       {userLevel < levelLock && (
         <div className="overlay-container">
           <div className="overlay-content">
-            <p>Level {levelLock}</p>
-            <FaLock size={52} color="white" className="my-lock-icon" />
+            <p>Level {levelLock} </p><FaLock size={52} color="white" />
           </div>
         </div>
       )}
       {userLevel >= levelLock && <Link to={path}>
         <div className="overlay-container">
           <div className="overlay-content">
-            <p>See More</p>
+            <p>Level {levelLock} </p> <FaUnlock color="white" />
           </div>
         </div>
       </Link>}

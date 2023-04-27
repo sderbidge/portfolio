@@ -1,4 +1,3 @@
-import ReactPlayer from "react-player"
 import Hero from "../components/Hero"
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,9 +7,9 @@ import { Navigation } from "swiper";
 import './Zappala.css'
 
 function Zappala({ addExp, addExpNotif }) {
-    const [vuejsExp, setVuejsExp] = useState(3);
-    const [electronExp, setElectronExp] = useState(3);
-    const [javascriptExp, setJavascriptExp] = useState(3);
+    const [vuejsExp, setVuejsExp] = useState(parseInt(localStorage.getItem("z-vuejs-exp")));
+    const [electronExp, setElectronExp] = useState(parseInt(localStorage.getItem("z-electron-exp")));
+    const [javascriptExp, setJavascriptExp] = useState(parseInt(localStorage.getItem("z-javascript-exp")));
 
     return (
         <>
@@ -20,7 +19,7 @@ function Zappala({ addExp, addExpNotif }) {
                     <iframe width="70%" height="80%" src="https://www.youtube.com/embed/072lMQyTXbA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </SwiperSlide>
                 <SwiperSlide id="zappala-swiper">
-                    <img id="danielZappala" src={`/assets/DanielZappala.jpg`} alt="Insight ICS Con" />
+                    <img id="danielZappala" src={`/assets/DanielZappala.jpg`} alt="Daniel Zappala" />
                 </SwiperSlide>
             </Swiper>
             <div id="zappala-markdown-section">
@@ -39,12 +38,14 @@ function Zappala({ addExp, addExpNotif }) {
                             addExpNotif(vuejsExp)
                             addExp(vuejsExp)
                             setVuejsExp(0)
+                            localStorage.setItem("z-vuejs-exp", 0)
                         }
                     }} onClick={() => {
                         if (vuejsExp !== 0) {
                             addExpNotif(vuejsExp)
                             addExp(vuejsExp)
                             setVuejsExp(0)
+                            localStorage.setItem("z-vuejs-exp", 0)
                         }
                         window.open("https://vuejs.org/", "_blank");
                     }}></div>
@@ -54,12 +55,14 @@ function Zappala({ addExp, addExpNotif }) {
                             addExpNotif(electronExp)
                             addExp(electronExp)
                             setElectronExp(0)
+                            localStorage.setItem("z-electron-exp", 0)
                         }
                     }} onClick={() => {
                         if (electronExp !== 0) {
                             addExpNotif(electronExp)
                             addExp(electronExp)
                             setElectronExp(0)
+                            localStorage.setItem("z-electron-exp", 0)
                         }
                         window.open("https://dotnet.microsoft.com/en-us/download", "_blank");
                     }}
@@ -70,12 +73,14 @@ function Zappala({ addExp, addExpNotif }) {
                             addExpNotif(javascriptExp)
                             addExp(javascriptExp)
                             setJavascriptExp(0)
+                            localStorage.setItem("z-javascript-exp", 0)
                         }
                     }} onClick={() => {
                         if (javascriptExp !== 0) {
                             addExpNotif(javascriptExp)
                             addExp(javascriptExp)
                             setJavascriptExp(0)
+                            localStorage.setItem("z-javascript-exp", 0)
                         }
                         window.open("https://www.mysql.com/", "_blank");
                     }}></div>

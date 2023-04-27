@@ -5,16 +5,22 @@ import { FaLinkedin, FaTwitter, FaFacebook, FaGithub } from "react-icons/fa";
 import "./Footer.css";
 import { useState } from "react";
 export default function Footer({ addExp, addExpNotif }) {
-  const [linkedinExp, setLinkedInExp] = useState(1)
-  const [twitterExp, setTwitterExp] = useState(1)
-  const [facebookExp, setFacebookExp] = useState(1)
-  const [githubExp, setGithubExp] = useState(3)
+  const [linkedinExp, setLinkedInExp] = useState(parseInt(localStorage.getItem("linkedin-exp")))
+  const [twitterExp, setTwitterExp] = useState(parseInt(localStorage.getItem("twitter-exp")))
+  const [facebookExp, setFacebookExp] = useState(parseInt(localStorage.getItem("facebook-exp")))
+  const [githubExp, setGithubExp] = useState(parseInt(localStorage.getItem("github-exp")))
+
+  console.log("linkedinExp", linkedinExp)
+  console.log("twitterExp", twitterExp)
+  console.log("facebookExp", facebookExp)
+  console.log("githubExp", githubExp)
 
   function handleLinkedinExp() {
     if (linkedinExp !== 0) {
       addExpNotif(linkedinExp)
       addExp(linkedinExp)
       setLinkedInExp(0)
+      localStorage.setItem("linkedin-exp", 0)
     }
   }
 
@@ -23,6 +29,7 @@ export default function Footer({ addExp, addExpNotif }) {
       addExpNotif(twitterExp)
       addExp(twitterExp)
       setTwitterExp(0)
+      localStorage.setItem("twitter-exp", 0)
     }
   }
 
@@ -31,6 +38,7 @@ export default function Footer({ addExp, addExpNotif }) {
       addExpNotif(facebookExp)
       addExp(facebookExp)
       setFacebookExp(0)
+      localStorage.setItem("facebook-exp", 0)
     }
   }
 
@@ -39,6 +47,7 @@ export default function Footer({ addExp, addExpNotif }) {
       addExpNotif(githubExp)
       addExp(githubExp)
       setGithubExp(0)
+      localStorage.setItem("github-exp", 0)
     }
   }
 

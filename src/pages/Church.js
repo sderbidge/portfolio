@@ -7,10 +7,10 @@ import { Navigation } from "swiper";
 import './Church.css'
 
 function Church({ addExp, addExpNotif }) {
-    const [conferenceExp, setConferenceExp] = useState(8);
-    const [targetExp, setTargetExp] = useState(3);
-    const [reactExp, setReactExp] = useState(3);
-    const [javascriptExp, setJavascriptExp] = useState(3);
+    const [conferenceExp, setConferenceExp] = useState(parseInt(localStorage.getItem("church-conference-exp")));
+    const [targetExp, setTargetExp] = useState(parseInt(localStorage.getItem("church-target-exp")));
+    const [reactExp, setReactExp] = useState(parseInt(localStorage.getItem("church-react-exp")));
+    const [javascriptExp, setJavascriptExp] = useState(parseInt(localStorage.getItem("church-javascript-exp")));
 
     return (
         <>
@@ -39,12 +39,14 @@ function Church({ addExp, addExpNotif }) {
                                     addExpNotif(conferenceExp)
                                     addExp(conferenceExp)
                                     setConferenceExp(0)
+                                    localStorage.setItem("church-conference-exp", 0)
                                 }
                             }} onClick={() => {
                                 if (conferenceExp !== 0) {
                                     addExpNotif(conferenceExp)
                                     addExp(conferenceExp)
                                     setConferenceExp(0)
+                                    localStorage.setItem("church-conference-exp", 0)
                                 }
                                 window.open("https://churchofjesuschrist.org/", "_blank");
                             }}
@@ -64,12 +66,14 @@ function Church({ addExp, addExpNotif }) {
                                 addExpNotif(targetExp)
                                 addExp(targetExp)
                                 setTargetExp(0)
+                                localStorage.setItem("church-target-exp", 0)
                             }
                         }} onClick={() => {
                             if (targetExp !== 0) {
                                 addExpNotif(targetExp)
                                 addExp(targetExp)
                                 setTargetExp(0)
+                                localStorage.setItem("church-target-exp", 0)
                             }
                             window.open("https://business.adobe.com/products/target/adobe-target.html", "_blank");
                         }}
@@ -80,12 +84,14 @@ function Church({ addExp, addExpNotif }) {
                                 addExpNotif(reactExp)
                                 addExp(reactExp)
                                 setReactExp(0)
+                                localStorage.setItem("church-react-exp", 0)
                             }
                         }} onClick={() => {
                             if (reactExp !== 0) {
                                 addExpNotif(reactExp)
                                 addExp(reactExp)
                                 setReactExp(0)
+                                localStorage.setItem("church-react-exp", 0)
                             }
                             window.open("https://react.dev/", "_blank");
                         }}></div>
@@ -95,12 +101,14 @@ function Church({ addExp, addExpNotif }) {
                                 addExpNotif(javascriptExp)
                                 addExp(javascriptExp)
                                 setJavascriptExp(0)
+                                localStorage.setItem("church-javascript-exp", 0)
                             }
                         }} onClick={() => {
                             if (javascriptExp !== 0) {
                                 addExpNotif(javascriptExp)
                                 addExp(javascriptExp)
                                 setJavascriptExp(0)
+                                localStorage.setItem("church-javascript-exp", 0)
                             }
                             window.open("https://www.javascript.com/", "_blank");
                         }}></div>

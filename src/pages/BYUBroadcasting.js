@@ -8,9 +8,9 @@ import { Navigation } from "swiper";
 import './BYUBroadcasting.css'
 
 function BYUBroadcasting({ addExp, addExpNotif }) {
-    const [vuejsExp, setVuejsExp] = useState(3);
-    const [nodeExp, setNodeExp] = useState(5);
-    const [dockerExp, setDockerExp] = useState(7);
+    const [vuejsExp, setVuejsExp] = useState(parseInt(localStorage.getItem("broadcasting-vuejs-exp")));
+    const [nodeExp, setNodeExp] = useState(parseInt(localStorage.getItem("broadcasting-node-exp")));
+    const [dockerExp, setDockerExp] = useState(parseInt(localStorage.getItem("broadcasting-docker-exp")));
 
     return (
         <>
@@ -49,12 +49,14 @@ function BYUBroadcasting({ addExp, addExpNotif }) {
                             addExpNotif(vuejsExp)
                             addExp(vuejsExp)
                             setVuejsExp(0)
+                            localStorage.setItem("broadcasting-vuejs-exp", 0)
                         }
                     }} onClick={() => {
                         if (vuejsExp !== 0) {
                             addExpNotif(vuejsExp)
                             addExp(vuejsExp)
                             setVuejsExp(0)
+                            localStorage.setItem("broadcasting-vuejs-exp", 0)
                         }
                         window.open("https://vuejs.org/", "_blank");
                     }}></div>
@@ -64,12 +66,14 @@ function BYUBroadcasting({ addExp, addExpNotif }) {
                             addExpNotif(nodeExp)
                             addExp(nodeExp)
                             setNodeExp(0)
+                            localStorage.setItem("broadcasting-node-exp", 0)
                         }
                     }} onClick={() => {
                         if (nodeExp !== 0) {
                             addExpNotif(nodeExp)
                             addExp(nodeExp)
                             setNodeExp(0)
+                            localStorage.setItem("broadcasting-node-exp", 0)
                         }
                         window.open("https://nodejs.org/en", "_blank");
                     }}
@@ -80,12 +84,14 @@ function BYUBroadcasting({ addExp, addExpNotif }) {
                             addExpNotif(dockerExp)
                             addExp(dockerExp)
                             setDockerExp(0)
+                            localStorage.setItem("broadcasting-docker-exp", 0)
                         }
                     }} onClick={() => {
                         if (dockerExp !== 0) {
                             addExpNotif(dockerExp)
                             addExp(dockerExp)
                             setDockerExp(0)
+                            localStorage.setItem("broadcasting-docker-exp", 0)
                         }
                         window.open("https://www.docker.com/", "_blank");
                     }}></div>

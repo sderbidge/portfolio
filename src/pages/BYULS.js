@@ -1,4 +1,3 @@
-import ReactPlayer from "react-player"
 import Hero from "../components/Hero"
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,9 +7,9 @@ import { Navigation } from "swiper";
 import './BYULS.css'
 
 function BYULS({ addExp, addExpNotif }) {
-    const [vuejsExp, setVuejsExp] = useState(13);
-    const [dotNetExp, setDotNetExp] = useState(13);
-    const [mysqlExp, setMysqlExp] = useState(13);
+    const [vuejsExp, setVuejsExp] = useState(parseInt(localStorage.getItem("ls-vuejs-exp")));
+    const [dotNetExp, setDotNetExp] = useState(parseInt(localStorage.getItem("ls-dotnet-exp")));
+    const [mysqlExp, setMysqlExp] = useState(parseInt(localStorage.getItem("ls-mysql-exp")));
 
     return (
         <>
