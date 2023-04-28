@@ -25,7 +25,7 @@ function About({ level, addExp, addExpNotif }) {
                 title={"Violin Experience"}
                 subtitle={"Lyceum Philharmonic"}
                 imageName={"lyceum.jpg"}
-                levelLock={6}
+                levelLock={5}
                 userLevel={level}
                 backgroundPosition={"center 25%"}
                 path={"/violin"}
