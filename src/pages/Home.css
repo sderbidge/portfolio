@@ -51,3 +51,28 @@
         1px 1px 0 #000;
     margin-top: 30px;
 }
+
+@media screen and (max-width: 768px) {
+    #tutorial-exp {
+        margin-top: 100px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .explanation-container h1 {
+        font-size: 38px;
+        color: #fff;
+        text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000000,
+            1px 1px 0 #000;
+        margin-top: 50px;
+        font-weight: bold;
+    }
+
+    .explanation-container p {
+        font-size: 24px;
+        width: 75%;
+    }
+}
