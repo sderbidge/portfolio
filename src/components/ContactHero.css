@@ -1,4 +1,4 @@
-.hero-component-container {
+.contact-hero-component-container {
     background: url("../../public/assets/drone.jpg") center center/cover no-repeat;
     width: 100%;
     display: flex;
@@ -12,28 +12,37 @@
     height: 100vh;
 }
 
-.hero-component-container>h1 {
-    color: #fff;
-    font-size: 100px;
-    margin-top: -100px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+#contact-hero-text-container {
+    width: 100%;
+    height: 300px;
+    margin-top: -300px;
 }
 
-.hero-component-container>p {
+#contact-hero-text-container>h1 {
+    color: #fff;
+    font-size: 120px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+}
+
+#contact-hero-text-container>p {
     margin-top: 8px;
     color: #fff;
-    font-size: 32px;
+    font-size: 80px;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
 }
 
 @media screen and (max-width: 1180px) {
-    .hero-component-container {
+    .contact-hero-component-container {
         height: 40vh;
     }
 
-    .hero-component-container>h1 {
+    #contact-hero-text-container>h1 {
         font-size: 80px;
         margin-top: -150px;
     }
@@ -41,40 +50,40 @@
 
 
 @media screen and (max-width: 953px) {
-    .hero-component-container>h1 {
+    #contact-hero-text-container>h1 {
         font-size: 70px;
         margin-top: -100px;
     }
 
-    .hero-component-container>p {
+    #contact-hero-text-container>p {
         font-size: 30px;
     }
 }
 
 @media screen and (max-width: 830px) {
-    .hero-component-container>h1 {
+    #contact-hero-text-container>h1 {
         font-size: 65px;
         margin-top: -150px;
     }
 }
 
 @media screen and (max-width: 775px) {
-    .hero-component-container {
+    #contact-hero-text-container {
         height: 35vh;
     }
 
-    .hero-component-container>h1 {
+    #contact-hero-text-container>h1 {
         font-size: 55px;
         margin-top: -150px;
     }
 }
 
 @media screen and (max-width: 665px) {
-    .hero-component-container {
+    .contact-hero-component-container {
         height: 30vh;
     }
 
-    .hero-component-container>h1 {
+    #contact-hero-text-container>h1 {
         font-size: 40px;
         margin-top: -150px;
     }

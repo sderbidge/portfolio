@@ -19,7 +19,8 @@ import BYULS from './pages/BYULS'
 import Zappala from "./pages/Zappala";
 import Sealed from "./pages/Sealed";
 import Missionary from "./pages/Missionary";
-import setupLocalStorage from "./data/LocalStorageSetup";
+import { FaUnlock } from "react-icons/fa";
+import Contact from "./pages/Contact";
 
 
 function App() {
@@ -184,6 +185,7 @@ function App() {
         <Route path="/sealed" exact element={<Sealed addExp={addExp} addExpNotif={addExpNotif} />} />
         <Route path="/missionary" exact element={<Missionary addExp={addExp} addExpNotif={addExpNotif} />} />
         <Route path="/violin" exact element={<Violin addExp={addExp} addExpNotif={addExpNotif} />} />
+        <Route path="/contact" exact element={<Contact />} />
       </Routes>
       <div id="fireworks-container">
         <div id="level-up">LEVEL UP!</div>

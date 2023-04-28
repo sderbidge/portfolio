@@ -1,0 +1,53 @@
+.explanation-container {
+    height: 800px;
+    background-color: #0D1109;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#tutorial-exp {
+    margin-top: 100px;
+    width: 350px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 100px;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #7bff81, #4caf50);
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000000,
+        1px 1px 0 #000;
+    border: 5px solid #fff;
+}
+
+.explanation-container h1 {
+    font-size: 56px;
+    color: #fff;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000000,
+        1px 1px 0 #000;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.explanation-container p {
+    width: 1000px;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000000,
+        1px 1px 0 #000;
+    margin-top: 30px;
+}
