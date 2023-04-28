@@ -19,7 +19,6 @@ import BYULS from './pages/BYULS'
 import Zappala from "./pages/Zappala";
 import Sealed from "./pages/Sealed";
 import Missionary from "./pages/Missionary";
-import { FaUnlock } from "react-icons/fa";
 import Contact from "./pages/Contact";
 
 
