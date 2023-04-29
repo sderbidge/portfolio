@@ -54,7 +54,7 @@ function Church({ addExp, addExpNotif }) {
                     </div>
                     <div className="content-paragraph">The team that I am on is the Experience Opitmization team. We run AB tests on churchofjesuschrist.org and I have personally created or continued various tests for the website. I have done several tests which include Banners for Easter, Chat bots for the main page, Gospel Library icons, Tools vs Resources, New Homepage, Content Square, and much more.</div>
                     <div className="content-paragraph">I have also worked on Front-end tickets for the Church's calendar as well</div>
-                    <img id="circle-profile" src={`/assets/profile-cropped.png`} alt="Insight ICS Con" />
+                    <img id="circle-profile" src={`/assets/profile.jpg`} alt="Insight ICS Con" />
                 </div>
                 <div className="skills-header">
                     <h1>Skills</h1>
