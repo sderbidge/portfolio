@@ -60,6 +60,9 @@
   margin-left: 2px;
 }
 
+.active {
+  border-bottom: 4px solid #fff;
+}
 
 .fa-typo3 {
   margin-left: 0.5rem;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "./Button";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
@@ -7,6 +7,7 @@ import "./Navbar.css";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [activeLink, setActiveLink] = useState("");
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -24,6 +25,13 @@ function Navbar() {
   }, []);
 
   window.addEventListener("resize", showButton);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location]);
+
 
   return (
     <>
@@ -44,19 +52,19 @@ function Navbar() {
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              <Link to="/" className={activeLink === "/" ? "nav-links active" : "nav-links"} onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+              <Link to="/about" className={activeLink === "/about" ? "nav-links active" : "nav-links"} onClick={closeMobileMenu}>
                 About
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 to="/contact"
-                className="nav-links"
+                className={activeLink === "/contact" ? "nav-links active" : "nav-links"}
                 onClick={closeMobileMenu}
               >
                 Contact
